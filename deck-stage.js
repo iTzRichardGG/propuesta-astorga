@@ -24,9 +24,10 @@
  *      and posts {slideIndexChanged: N} to the parent window on nav.
  *  (b) keyboard navigation — ←/→ and ↑/↓, PgUp/PgDn, Space, Home/End,
  *      number keys.
- *      On touch devices, tapping the left/right half of the stage goes
- *      prev/next — taps on links, buttons and other interactive slide
- *      content are left alone.
+ *      On touch devices, swiping left/right goes next/prev, and tapping the
+ *      left/right half of the stage does the same — taps and swipes on links,
+ *      buttons and other interactive slide content are left alone, and a
+ *      mostly-vertical drag scrolls slide content instead of navigating.
  *  (c) press R to reset to slide 0 (with a tasteful keyboard hint).
  *  (d) bottom-center overlay showing slide count + hints, fades out on
  *      idle; hovering or focusing its controls pins it visible until the
@@ -138,6 +139,14 @@
   const NARROW_MQ = matchMedia('(max-width: 640px)');
   // Slide-authored controls that should keep a tap instead of it navigating.
   const INTERACTIVE_SEL = 'a[href], button, input, select, textarea, summary, label, video[controls], audio[controls], [role="button"], [onclick], [tabindex]:not([tabindex^="-"]), [contenteditable]:not([contenteditable="false" i])';
+  // Swipe navigation (touch only). SWIPE_MIN_PX is in CSS pixels, so it is
+  // independent of the stage's scale() — the finger travels the same distance
+  // on glass whatever the design size. SWIPE_RATIO demands the gesture be
+  // mostly horizontal, which is what keeps a vertical scroll inside slide
+  // content (the structure mockup's .mock-scroll) from paging the deck.
+  const SWIPE_MIN_PX = 45;
+  const SWIPE_RATIO = 1.4;
+  const SWIPE_MAX_MS = 800;
 
   const pad2 = (n) => String(n).padStart(2, '0');
 
@@ -684,6 +693,9 @@
       this._onSlotChange = this._onSlotChange.bind(this);
       this._onMouseMove = this._onMouseMove.bind(this);
       this._onTap = this._onTap.bind(this);
+      this._onPointerDown = this._onPointerDown.bind(this);
+      this._onPointerUp = this._onPointerUp.bind(this);
+      this._onPointerCancel = this._onPointerCancel.bind(this);
       this._onMessage = this._onMessage.bind(this);
       // Capture-phase close so a click anywhere dismisses the menu, but
       // ignore clicks that land inside the menu itself — otherwise the
@@ -718,6 +730,12 @@
       window.addEventListener('message', this._onMessage);
       window.addEventListener('click', this._onDocClick, true);
       this.addEventListener('click', this._onTap);
+      // Swipe nav. pointerdown is passive (we never preventDefault it, so the
+      // browser keeps native scrolling inside slide content responsive); the
+      // decision to navigate is made on pointerup once the gesture is known.
+      this.addEventListener('pointerdown', this._onPointerDown, { passive: true });
+      this.addEventListener('pointerup', this._onPointerUp);
+      this.addEventListener('pointercancel', this._onPointerCancel);
       // Print lays every slide out as its own page, so [data-deck-active]-
       // gated entrance styles need the attribute on every slide (not just
       // the current one) or their content prints at the hidden base style.
@@ -1049,6 +1067,10 @@
       window.removeEventListener('afterprint', this._onAfterPrint);
       if (this._freezeStyle) { this._freezeStyle.remove(); this._freezeStyle = null; }
       this.removeEventListener('click', this._onTap);
+      this.removeEventListener('pointerdown', this._onPointerDown);
+      this.removeEventListener('pointerup', this._onPointerUp);
+      this.removeEventListener('pointercancel', this._onPointerCancel);
+      this._swipe = null;
       if (this._hideTimer) clearTimeout(this._hideTimer);
       if (this._mouseIdleTimer) clearTimeout(this._mouseIdleTimer);
       if (this._liveTimer) clearTimeout(this._liveTimer);
@@ -1722,9 +1744,60 @@
       this._rail.inert = hard || !this._railVisible;
     }
 
+    /* Swipe: is this gesture eligible to navigate? Shares _onTap's rules —
+       touch only, must land on the stage, must not steal a tap from
+       slide-authored controls — so the two gestures agree on what they own. */
+    _swipeTargetOk(e) {
+      if (FINE_POINTER_MQ.matches) return false;
+      if (e.pointerType === 'mouse') return false;
+      const path = e.composedPath();
+      if (!this._stage || !path.includes(this._stage)) return false;
+      for (const n of path) {
+        if (n === this._stage) break;
+        if (n.matches && n.matches(INTERACTIVE_SEL)) return false;
+      }
+      return true;
+    }
+
+    _onPointerDown(e) {
+      // A second finger means pinch/zoom, not a swipe — abandon the gesture
+      // rather than paging on whichever finger happens to lift first.
+      if (this._swipe) { this._swipe = null; return; }
+      if (!e.isPrimary || !this._swipeTargetOk(e)) return;
+      this._swipe = { id: e.pointerId, x: e.clientX, y: e.clientY, t: e.timeStamp };
+    }
+
+    _onPointerUp(e) {
+      const s = this._swipe;
+      this._swipe = null;
+      if (!s || e.pointerId !== s.id) return;
+      const dx = e.clientX - s.x;
+      const dy = e.clientY - s.y;
+      if (e.timeStamp - s.t > SWIPE_MAX_MS) return;
+      if (Math.abs(dx) < SWIPE_MIN_PX) return;
+      if (Math.abs(dx) < Math.abs(dy) * SWIPE_RATIO) return;
+      // Swipe left (dx < 0) pulls the next slide in from the right, matching
+      // the direction the content appears to travel on every touch carousel.
+      this._advance(dx < 0 ? 1 : -1, 'tap');
+      // Past the browser's slop threshold no click follows, but a fast short
+      // swipe can still land inside it — _onTap would then fire and advance a
+      // second time. Swallow the next click on this stage if one arrives.
+      this._swallowTapUntil = e.timeStamp + 500;
+    }
+
+    _onPointerCancel(e) {
+      if (this._swipe && e.pointerId === this._swipe.id) this._swipe = null;
+    }
+
     _onTap(e) {
       // Touch-only — keyboard + the overlay toolbar cover nav on desktop.
       if (FINE_POINTER_MQ.matches) return;
+      // A swipe already navigated; don't let its trailing click do it again.
+      if (this._swallowTapUntil && e.timeStamp <= this._swallowTapUntil) {
+        this._swallowTapUntil = 0;
+        e.preventDefault();
+        return;
+      }
       // Only taps that land on the stage (slide content or letterbox); the
       // overlay / rail / menus are siblings with their own click handlers.
       const path = e.composedPath();
