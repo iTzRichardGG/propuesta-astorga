@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<!-- Design system: compiled from theme.css with Tailwind CSS v4.
+     Rebuild after editing theme.css:
+     npx @tailwindcss/cli -i theme.css -o tailwind.css --minify -->
+<link rel="stylesheet" href="./tailwind.css">
+<style>
+  body { margin: 0; background: #0e1a29; }
+</style>
+</helmet>
+<x-import component-from-global-scope="deck-stage" from="./deck-stage.js" width="1920" height="1080" hint-size="100%,100%">
+
+<section data-label="Portada" data-screen-label="01" data-idx="01" data-speaker-notes="Presentación de la propuesta. Confirmar asistentes y objetivo de la reunión." class="slide bg-paper grid grid-cols-[1.06fr_1fr] text-ink">
+<div class="flex flex-col justify-between py-24 pr-16 pl-28">
+<div class="flex items-start justify-between gap-10" data-fade>
+<img src="./assets/logo-astorga.png" alt="Astorga Building Company" class="h-32 w-auto object-contain object-left" />
+<p class="m-0 pt-3 label-mono text-mono-xs text-faint">Rev. 01</p>
+</div>
+<div class="flex flex-col gap-8">
+<span class="block h-2 w-30 bg-signal" data-wipe></span>
+<p class="m-0 eyebrow text-accent [--i:1]" data-rise>Propuesta comercial 2026</p>
+<h1 class="m-0 max-w-[46rem] headline text-h1 text-brand [--i:2]" data-rise>Propuesta de Landing Page</h1>
+<p class="m-0 font-display text-h3 font-medium tracking-wide text-ink [--i:3]" data-rise translate="no">Astorga Building Company</p>
+<p class="m-0 max-w-[38rem] text-body text-pretty text-mute [--i:4]" data-rise>Planificación, estructura y alcance de una landing page profesional para fortalecer la presencia digital de la empresa y generar nuevas oportunidades comerciales.</p>
+</div>
+</div>
+<div class="m-10 ml-0 overflow-hidden border border-line" data-fade>
+<img src="./assets/portada-imagen.jpg" alt="Obra en construcción de Astorga Building Company" class="h-full w-full object-cover" />
+</div>
+</section>
+
+<section data-label="Objetivos" data-screen-label="02" data-idx="02" data-speaker-notes="Seis objetivos. Los tres primeros son de posicionamiento, los tres siguientes de conversión." class="slide slide-index slide-pad flex flex-col gap-14 bg-paper">
+<div class="flex flex-col gap-5">
+<p class="m-0 eyebrow text-accent" data-rise>01 — Objetivos</p>
+<h2 class="m-0 headline text-h2 text-brand [--i:1]" data-rise>Objetivos de la landing page</h2>
+</div>
+<div class="my-auto grid grid-cols-3 gap-x-16 gap-y-16">
+<div class="flex flex-col gap-4 rule-tick pt-7 [--i:2]" data-rise>
+<p class="m-0 numeral text-h2 text-signal tabular-nums">01</p>
+<p class="m-0 text-body font-medium leading-snug text-pretty">Crear una presencia digital profesional.</p>
+</div>
+<div class="flex flex-col gap-4 rule-tick pt-7 [--i:3]" data-rise>
+<p class="m-0 numeral text-h2 text-signal tabular-nums">02</p>
+<p class="m-0 text-body font-medium leading-snug text-pretty">Comunicar la identidad y capacidades de la empresa.</p>
+</div>
+<div class="flex flex-col gap-4 rule-tick pt-7 [--i:4]" data-rise>
+<p class="m-0 numeral text-h2 text-signal tabular-nums">03</p>
+<p class="m-0 text-body font-medium leading-snug text-pretty">Mostrar proyectos y experiencia acumulada.</p>
+</div>
+<div class="flex flex-col gap-4 rule-tick pt-7 [--i:5]" data-rise>
+<p class="m-0 numeral text-h2 text-signal tabular-nums">04</p>
+<p class="m-0 text-body font-medium leading-snug text-pretty">Generar confianza en clientes potenciales.</p>
+</div>
+<div class="flex flex-col gap-4 rule-tick pt-7 [--i:6]" data-rise>
+<p class="m-0 numeral text-h2 text-signal tabular-nums">05</p>
+<p class="m-0 text-body font-medium leading-snug text-pretty">Facilitar la comunicación y la solicitud de información.</p>
+</div>
+<div class="flex flex-col gap-4 rule-tick pt-7 [--i:7]" data-rise>
+<p class="m-0 numeral text-h2 text-signal tabular-nums">06</p>
+<p class="m-0 text-body font-medium leading-snug text-pretty">Mejorar la presentación comercial de la empresa.</p>
+</div>
+</div>
+</section>
+
+<section data-label="Estructura (interactivo)" data-screen-label="03" data-idx="03" data-speaker-notes="Slide interactivo: el mockup muestra el esqueleto real de la página. Recorrer las secciones con el cursor y leer el objetivo de cada una." class="slide slide-index slide-pad-tight grid grid-cols-[1.3fr_1fr] gap-13 bg-surface">
+<div class="flex min-h-0 flex-col gap-6">
+<div class="flex items-baseline gap-6">
+<p class="m-0 eyebrow text-accent" data-rise>02 — Estructura</p>
+<p class="m-0 label-mono text-mono-xs text-faint [--i:1]" data-fade>Desplaza la página · Pasa el cursor sobre cada bloque</p>
+</div>
+<h2 class="m-0 headline text-h3 text-brand [--i:1]" data-rise>Estructura general de la landing page</h2>
+<div class="flex min-h-0 flex-1 flex-col overflow-hidden border border-line bg-paper [--i:2]" data-rise>
+<div class="flex items-center gap-2.5 border-b border-line bg-surface px-5 py-3.5">
+<span class="size-3 rounded-full bg-line"></span>
+<span class="size-3 rounded-full bg-line"></span>
+<span class="size-3 rounded-full bg-line"></span>
+<p class="m-0 ml-3.5 font-mono text-mono-xs text-faint" translate="no">astorgabuilding.com</p>
+</div>
+<!-- Wireframe de la página a tamaño real: cada franja es una sección del
+     scroll y el conjunto se recorre con la rueda del mouse (deck-stage sólo
+     navega con teclado/clic, así que no hay conflicto).
+     Los bloques usan bg-current / border-current, de modo que el color lo
+     define el estado de la fila (text-mute apagado, text-brand activo) y
+     no hace falta duplicar clases por estado. -->
+<div class="mock-scroll flex min-h-0 flex-1 flex-col overflow-y-auto overscroll-contain">
+<div class="flex shrink-0 items-center gap-5 border-b border-b-line px-8 py-6 text-mute">
+<span class="h-7 w-28 bg-current opacity-35"></span>
+<span class="ml-auto h-3 w-14 bg-current opacity-25"></span>
+<span class="h-3 w-14 bg-current opacity-25"></span>
+<span class="h-3 w-14 bg-current opacity-25"></span>
+<span class="h-3 w-14 bg-current opacity-25"></span>
+<span class="h-9 w-24 bg-current opacity-30"></span>
+</div>
+<sc-for list="{{ items }}" as="item" hint-placeholder-count="11">
+<button type="button" onMouseEnter="{{ item.onMouseEnter }}" onClick="{{ item.onClick }}" aria-pressed="{{ item.pressed }}" aria-label="{{ item.section }}" class="{{ item.cls }}">
+<sc-if value="{{ item.num }}">
+<span class="w-12 shrink-0 self-start pt-1 font-mono text-mono opacity-50 tabular-nums">{{ item.num }}</span>
+</sc-if>
+<div class="{{ item.wrap }}">
+<sc-for list="{{ item.cols }}" as="col">
+<div class="{{ col.cls }}">
+<sc-for list="{{ col.bars }}" as="bar">
+<span class="{{ bar.cls }}"></span>
+</sc-for>
+</div>
+</sc-for>
+</div>
+</button>
+</sc-for>
+<div class="flex h-38 shrink-0 items-start gap-8 border-t border-t-line px-8 py-8 text-mute">
+<span class="h-6 w-24 bg-current opacity-30"></span>
+<span class="ml-auto h-3 w-16 bg-current opacity-20"></span>
+<span class="h-3 w-16 bg-current opacity-20"></span>
+<span class="h-3 w-16 bg-current opacity-20"></span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col justify-center gap-7 border-l-8 border-signal py-10 pl-11">
+<p class="m-0 numeral text-display text-line tabular-nums">{{ activeNum }}</p>
+<p class="m-0 eyebrow text-accent">{{ activeSection }}</p>
+<p class="m-0 headline text-h3 text-brand">{{ activeTitle }}</p>
+<p class="m-0 text-body text-pretty text-mute">{{ activeDesc }}</p>
+</div>
+</section>
+
+<section data-label="Sección: Hero" data-screen-label="04" data-idx="04" data-speaker-notes="Transición: aquí se abren las cuatro alternativas de Hero. Pedir preferencia al cierre." class="slide navy-field slide-pad flex flex-col justify-center gap-9 text-white">
+<p class="m-0 numeral text-mega text-white/12 tabular-nums" data-fade>03</p>
+<h2 class="m-0 headline text-h1 [--i:1]" data-rise>Conceptos de Hero</h2>
+<span class="block h-2 w-30 bg-signal [--i:2]" data-wipe></span>
+<p class="m-0 max-w-[62rem] text-lead text-pretty text-white/75 [--i:3]" data-rise>Cuatro alternativas conceptuales para la primera impresión de la landing page. Cada una se acompaña de un video de referencia con el comportamiento esperado.</p>
+</section>
+
+<section data-label="Hero: Video" data-screen-label="05" data-idx="05" data-speaker-notes="Concepto 1. Mostrar el video de referencia y comentar peso y producción necesaria." class="slide slide-index slide-pad grid grid-cols-[1fr_1.35fr] items-center gap-20 bg-paper">
+<div class="flex flex-col gap-7">
+<p class="m-0 eyebrow text-accent" data-rise>Concepto 01</p>
+<h2 class="m-0 headline text-h2 text-brand [--i:1]" data-rise>Hero con video</h2>
+<span class="block h-1.5 w-24 bg-signal [--i:2]" data-wipe></span>
+<p class="m-0 text-body text-pretty text-mute [--i:3]" data-rise>Experiencia inicial basada en un video como elemento principal del Hero, generando una presentación dinámica y envolvente de la empresa.</p>
+</div>
+<video class="w-full h-auto [--i:2]" data-rise src="./assets/hero-video-referencia.mp4" autoplay="autoplay" muted="muted" loop="loop" playsinline="playsinline"></video>
+</section>
+
+<section data-label="Hero: Imagen" data-screen-label="06" data-idx="06" data-speaker-notes="Concepto 2. La opción más rápida de producir y la más estable en rendimiento." class="slide slide-index slide-pad grid grid-cols-[1fr_1.35fr] items-center gap-20 bg-paper">
+<div class="flex flex-col gap-7">
+<p class="m-0 eyebrow text-accent" data-rise>Concepto 02</p>
+<h2 class="m-0 headline text-h2 text-brand [--i:1]" data-rise>Hero con imagen</h2>
+<span class="block h-1.5 w-24 bg-signal [--i:2]" data-wipe></span>
+<p class="m-0 text-body text-pretty text-mute [--i:3]" data-rise>Experiencia inicial basada en una imagen principal como elemento visual destacado para comunicar la identidad de la empresa.</p>
+</div>
+<img class="w-full h-auto [--i:2]" data-rise src="./assets/hero-imagen-referencia.png" alt="Referencia de Hero con imagen" />
+</section>
+
+<section data-label="Hero: 3D" data-screen-label="07" data-idx="07" data-speaker-notes="Concepto 3. Mayor diferenciación; requiere más tiempo de desarrollo." class="slide slide-index slide-pad grid grid-cols-[1fr_1.35fr] items-center gap-20 bg-paper">
+<div class="flex flex-col gap-7">
+<p class="m-0 eyebrow text-accent" data-rise>Concepto 03</p>
+<h2 class="m-0 headline text-h2 text-brand [--i:1]" data-rise>Hero con elemento 3D</h2>
+<span class="block h-1.5 w-24 bg-signal [--i:2]" data-wipe></span>
+<p class="m-0 text-body text-pretty text-mute [--i:3]" data-rise>Experiencia inicial con un elemento tridimensional interactivo como recurso principal, para crear una presentación innovadora y diferenciadora.</p>
+</div>
+<img class="w-full h-auto [--i:2]" data-rise src="./assets/hero-3d-referencia.png" alt="Referencia de Hero con elemento 3D" />
+</section>
+
+<section data-label="Hero: Scroll" data-screen-label="08" data-idx="08" data-speaker-notes="Concepto 4. Narrativa por scroll: ordena mucha información técnica." class="slide slide-index slide-pad grid grid-cols-[1fr_1.35fr] items-center gap-20 bg-paper">
+<div class="flex flex-col gap-7">
+<p class="m-0 eyebrow text-accent" data-rise>Concepto 04</p>
+<h2 class="m-0 headline text-h2 text-brand [--i:1]" data-rise>Hero con scroll storytelling</h2>
+<span class="block h-1.5 w-24 bg-signal [--i:2]" data-wipe></span>
+<p class="m-0 text-body text-pretty text-mute [--i:3]" data-rise>Experiencia inicial basada en una narrativa visual donde el usuario descubre la información mediante el desplazamiento de la página.</p>
+</div>
+<video class="w-full h-auto [--i:2]" data-rise src="./assets/hero-scroll-referencia.mp4" autoplay="autoplay" muted="muted" loop="loop" playsinline="playsinline"></video>
+</section>
+
+<section data-label="Referencias" data-screen-label="09" data-idx="09" data-speaker-notes="Slide de imagen: dejar que las capturas hablen. Comentar en voz lo que se analiza de cada una — organización del contenido, presentación empresarial, forma de mostrar proyectos, comunicación de servicios, elementos de confianza y experiencia de navegación. Aclarar que son inspiración, no copia." class="slide slide-index slide-pad-tight flex flex-col gap-8 bg-paper">
+<div class="flex items-end justify-between gap-16">
+<div class="flex flex-col gap-4">
+<p class="m-0 eyebrow text-accent" data-rise>04 — Referencias</p>
+<h2 class="m-0 headline text-h2 text-brand [--i:1]" data-rise>Referencias de páginas web</h2>
+</div>
+<p class="m-0 max-w-[36rem] pb-2 text-small leading-snug text-pretty text-faint [--i:2]" data-fade>Inspiración y buenas prácticas. No se copia diseño, contenido ni identidad visual.</p>
+</div>
+<!-- Capturas horizontales: una destacada a la izquierda y dos apiladas a la
+     derecha, todas apaisadas y llenando la altura disponible. La clase
+     `plate` queda de fondo bajo cada <img> como aviso visual si el archivo
+     aún no existe en ./assets. -->
+<div class="grid min-h-0 flex-1 grid-cols-[1.62fr_1fr] gap-8">
+<figure class="m-0 flex min-h-0 flex-col gap-4 [--i:3]" data-rise>
+<a href="https://www.loftthirtyone.com/" target="_blank" rel="noopener" class="plate flex min-h-0 flex-1 flex-col overflow-hidden border border-line">
+<div class="flex shrink-0 items-center gap-2 border-b border-b-line bg-surface px-4 py-3">
+<span class="size-2.5 rounded-full bg-line"></span>
+<span class="size-2.5 rounded-full bg-line"></span>
+<span class="size-2.5 rounded-full bg-line"></span>
+<span class="ml-2 h-2.5 flex-1 rounded-full bg-line-soft"></span>
+</div>
+<img src="./assets/referencia-1.png" alt="Captura de sitio web de Loft Thirty One" class="min-h-0 w-full flex-1 object-cover object-top" />
+</a>
+<figcaption class="flex shrink-0 items-center gap-4">
+<span class="font-mono text-mono text-accent tabular-nums">01</span>
+<span class="h-px flex-1 bg-line"></span>
+<a href="https://www.loftthirtyone.com/" target="_blank" rel="noopener" class="label-mono text-mono-xs text-faint hover:text-accent">loftthirtyone.com</a>
+</figcaption>
+</figure>
+<div class="flex min-h-0 flex-col gap-8">
+<figure class="m-0 flex min-h-0 flex-1 flex-col gap-3.5 [--i:4]" data-rise>
+<a href="https://hba.com/" target="_blank" rel="noopener" class="plate flex min-h-0 flex-1 flex-col overflow-hidden border border-line">
+<div class="flex shrink-0 items-center gap-2 border-b border-b-line bg-surface px-4 py-2.5">
+<span class="size-2.5 rounded-full bg-line"></span>
+<span class="size-2.5 rounded-full bg-line"></span>
+<span class="size-2.5 rounded-full bg-line"></span>
+<span class="ml-2 h-2.5 flex-1 rounded-full bg-line-soft"></span>
+</div>
+<img src="./assets/referencia-2.png" alt="Captura de sitio web de HBA" class="min-h-0 w-full flex-1 object-cover object-top" />
+</a>
+<figcaption class="flex shrink-0 items-center gap-4">
+<span class="font-mono text-mono text-accent tabular-nums">02</span>
+<span class="h-px flex-1 bg-line"></span>
+<a href="https://hba.com/" target="_blank" rel="noopener" class="label-mono text-mono-xs text-faint hover:text-accent">hba.com</a>
+</figcaption>
+</figure>
+<figure class="m-0 flex min-h-0 flex-1 flex-col gap-3.5 [--i:5]" data-rise>
+<a href="https://www.laytonconstruction.com/" target="_blank" rel="noopener" class="plate flex min-h-0 flex-1 flex-col overflow-hidden border border-line">
+<div class="flex shrink-0 items-center gap-2 border-b border-b-line bg-surface px-4 py-2.5">
+<span class="size-2.5 rounded-full bg-line"></span>
+<span class="size-2.5 rounded-full bg-line"></span>
+<span class="size-2.5 rounded-full bg-line"></span>
+<span class="ml-2 h-2.5 flex-1 rounded-full bg-line-soft"></span>
+</div>
+<img src="./assets/referencia-3.png" alt="Captura de sitio web de Layton Construction" class="min-h-0 w-full flex-1 object-cover object-top" />
+</a>
+<figcaption class="flex shrink-0 items-center gap-4">
+<span class="font-mono text-mono text-accent tabular-nums">03</span>
+<span class="h-px flex-1 bg-line"></span>
+<a href="https://www.laytonconstruction.com/" target="_blank" rel="noopener" class="label-mono text-mono-xs text-faint hover:text-accent">laytonconstruction.com</a>
+</figcaption>
+</figure>
+</div>
+</div>
+</section>
+
+<section data-label="Alcance" data-screen-label="10" data-idx="10" data-speaker-notes="Punto clave del acuerdo: leer la columna derecha con calma para evitar expectativas fuera de alcance." class="slide slide-index slide-pad-tight flex flex-col gap-9 bg-paper">
+<div class="flex flex-col gap-3.5">
+<p class="m-0 eyebrow text-accent" data-rise>05 — Alcance</p>
+<h2 class="m-0 headline text-h3 text-brand [--i:1]" data-rise>Alcance de la propuesta</h2>
+</div>
+<div class="grid flex-1 grid-cols-[1.15fr_1fr] gap-16">
+<div class="flex flex-col gap-5 border-t-8 border-brand bg-surface px-10 py-9 [--i:2]" data-rise>
+<h3 class="m-0 font-display text-h3 font-semibold tracking-widest uppercase text-brand">Qué incluye</h3>
+<ul class="m-0 grid flex-1 list-none auto-rows-fr grid-cols-2 gap-x-9 p-0 text-small leading-snug">
+<li class="flex items-center border-t border-line"><span class="mr-2.5 text-brand" aria-hidden="true">✓</span>Landing page completa</li>
+<li class="flex items-center border-t border-line"><span class="mr-2.5 text-brand" aria-hidden="true">✓</span>Estructura personalizada</li>
+<li class="flex items-center border-t border-line"><span class="mr-2.5 text-brand" aria-hidden="true">✓</span>Diseño de interfaz profesional</li>
+<li class="flex items-center border-t border-line"><span class="mr-2.5 text-brand" aria-hidden="true">✓</span>Responsive móvil, tablet y desktop</li>
+<li class="flex items-center border-t border-line"><span class="mr-2.5 text-brand" aria-hidden="true">✓</span>Animaciones e interacciones</li>
+<li class="flex items-center border-t border-line"><span class="mr-2.5 text-brand" aria-hidden="true">✓</span>Formulario de contacto</li>
+<li class="flex items-center border-t border-line"><span class="mr-2.5 text-brand" aria-hidden="true">✓</span>Integración con WhatsApp</li>
+<li class="flex items-center border-t border-line"><span class="mr-2.5 text-brand" aria-hidden="true">✓</span>Mapa de ubicación si aplica</li>
+<li class="flex items-center border-t border-line"><span class="mr-2.5 text-brand" aria-hidden="true">✓</span>CMS para gestión de contenido</li>
+<li class="flex items-center border-t border-line"><span class="mr-2.5 text-brand" aria-hidden="true">✓</span>Dominio y publicación</li>
+<li class="flex items-center border-t border-line"><span class="mr-2.5 text-brand" aria-hidden="true">✓</span>Optimización SEO básica</li>
+<li class="flex items-center border-t border-line"><span class="mr-2.5 text-brand" aria-hidden="true">✓</span>Optimización de rendimiento</li>
+<li class="flex items-center border-y border-line"><span class="mr-2.5 text-brand" aria-hidden="true">✓</span>60 días de soporte post-entrega</li>
+<li class="flex items-center border-y border-line"><span class="mr-2.5 text-brand" aria-hidden="true">✓</span>2 rondas de cambios</li>
+</ul>
+</div>
+<div class="flex flex-col gap-5 border-t-8 border-accent bg-accent-tint px-10 py-9 [--i:3]" data-rise>
+<h3 class="m-0 font-display text-h3 font-semibold tracking-widest uppercase text-accent">No incluye</h3>
+<ul class="m-0 flex flex-1 list-none flex-col p-0 text-small leading-snug">
+<li class="flex flex-1 items-center border-t border-accent/15"><span class="mr-2.5 text-accent" aria-hidden="true">✗</span>Automatizaciones avanzadas o CRM</li>
+<li class="flex flex-1 items-center border-t border-accent/15"><span class="mr-2.5 text-accent" aria-hidden="true">✗</span>Desarrollo de sistemas personalizados</li>
+<li class="flex flex-1 items-center border-t border-accent/15"><span class="mr-2.5 text-accent" aria-hidden="true">✗</span>SEO avanzado o garantía de posicionamiento</li>
+<li class="flex flex-1 items-center border-t border-accent/15"><span class="mr-2.5 text-accent" aria-hidden="true">✗</span>Producción profesional de fotografía o video</li>
+<li class="flex flex-1 items-center border-t border-accent/15"><span class="mr-2.5 text-accent" aria-hidden="true">✗</span>Creación completa de contenido técnico</li>
+<li class="flex flex-1 items-center border-t border-accent/15"><span class="mr-2.5 text-accent" aria-hidden="true">✗</span>Rediseño completo después de la aprobación</li>
+<li class="flex flex-1 items-center border-t border-accent/15"><span class="mr-2.5 text-accent" aria-hidden="true">✗</span>Cambios estructurales posteriores</li>
+<li class="flex flex-1 items-center border-y border-accent/15"><span class="mr-2.5 text-accent" aria-hidden="true">✗</span>Nuevas funcionalidades no contempladas</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section data-label="Beneficios" data-screen-label="11" data-idx="11" data-speaker-notes="Traducir el alcance a beneficios de negocio antes de hablar de inversión." class="slide slide-index slide-pad flex flex-col gap-14 bg-surface">
+<div class="flex flex-col gap-4">
+<p class="m-0 eyebrow text-accent" data-rise>06 — Beneficios</p>
+<h2 class="m-0 headline text-h2 text-brand [--i:1]" data-rise>Beneficios para Astorga Building Company</h2>
+</div>
+<div class="my-auto grid grid-cols-3 gap-10">
+<div class="flex flex-col gap-4 bg-paper px-9 pt-8 pb-10 [--i:2]" data-rise>
+<span class="block h-1.5 w-11 bg-signal"></span>
+<p class="m-0 text-body font-medium leading-snug text-pretty">Mayor presencia profesional en internet.</p>
+</div>
+<div class="flex flex-col gap-4 bg-paper px-9 pt-8 pb-10 [--i:3]" data-rise>
+<span class="block h-1.5 w-11 bg-signal"></span>
+<p class="m-0 text-body font-medium leading-snug text-pretty">Mejor presentación de la empresa.</p>
+</div>
+<div class="flex flex-col gap-4 bg-paper px-9 pt-8 pb-10 [--i:4]" data-rise>
+<span class="block h-1.5 w-11 bg-signal"></span>
+<p class="m-0 text-body font-medium leading-snug text-pretty">Mayor confianza para clientes potenciales.</p>
+</div>
+<div class="flex flex-col gap-4 bg-paper px-9 pt-8 pb-10 [--i:5]" data-rise>
+<span class="block h-1.5 w-11 bg-signal"></span>
+<p class="m-0 text-body font-medium leading-snug text-pretty">Exhibición profesional de proyectos.</p>
+</div>
+<div class="flex flex-col gap-4 bg-paper px-9 pt-8 pb-10 [--i:6]" data-rise>
+<span class="block h-1.5 w-11 bg-signal"></span>
+<p class="m-0 text-body font-medium leading-snug text-pretty">Canal directo para recibir oportunidades comerciales.</p>
+</div>
+<div class="flex flex-col gap-4 bg-paper px-9 pt-8 pb-10 [--i:7]" data-rise>
+<span class="block h-1.5 w-11 bg-signal"></span>
+<p class="m-0 text-body font-medium leading-snug text-pretty">Diferenciación frente a competidores.</p>
+</div>
+</div>
+</section>
+
+<section data-label="Inversión" data-screen-label="12" data-idx="12" data-speaker-notes="Inversión estimada desde 150 USD. Explicar qué la hace variar antes de que pregunten." class="slide navy-field grid grid-cols-[1.1fr_1fr] text-white">
+<div class="flex flex-col justify-center gap-8 py-24 pr-16 pl-28">
+<p class="m-0 eyebrow text-signal" data-rise>08 — Inversión</p>
+<p class="m-0 font-display text-h3 font-medium text-white/80 [--i:1]" data-rise>Inversión estimada desde</p>
+<p class="m-0 flex items-baseline gap-6 [--i:2]" data-rise>
+<span class="numeral text-figure text-signal tabular-nums">$150</span>
+<span class="font-display text-h3 font-semibold tracking-widest text-signal/70">USD</span>
+</p>
+<span class="block h-px w-full max-w-[45rem] bg-white/15 [--i:3]" data-wipe></span>
+<p class="m-0 max-w-[45rem] text-body text-pretty text-white/70 [--i:3]" data-rise>La inversión final puede variar según los requerimientos específicos del proyecto, la cantidad de contenido, las funcionalidades adicionales y las necesidades particulares de Astorga Building Company.</p>
+</div>
+<div class="flex flex-col justify-center gap-8 bg-navy-deep/60 py-24 pr-28 pl-16">
+<h3 class="m-0 font-display text-h3 font-semibold tracking-widest uppercase text-signal [--i:2]" data-rise>Forma de pago</h3>
+<div class="flex items-baseline gap-6 border-t border-white/15 pt-7 [--i:3]" data-rise>
+<span class="numeral text-h1 tabular-nums">50%</span>
+<span class="text-body leading-snug text-pretty text-white/80">de anticipo para iniciar el desarrollo.</span>
+</div>
+<div class="flex items-baseline gap-6 border-y border-white/15 py-7 [--i:4]" data-rise>
+<span class="numeral text-h1 tabular-nums">50%</span>
+<span class="text-body leading-snug text-pretty text-white/80">al finalizar el desarrollo, previo a la entrega y publicación.</span>
+</div>
+<p class="m-0 text-small text-pretty text-white/60 [--i:5]" data-rise>La propuesta contempla el alcance definido en este documento. Cualquier requerimiento adicional podrá ser evaluado y cotizado por separado.</p>
+</div>
+</section>
+
+<section data-label="Cierre" data-screen-label="13" data-idx="13" data-speaker-notes="Cerrar pidiendo dos decisiones: concepto de Hero preferido y confirmación de alcance." class="slide slide-index slide-pad flex flex-col justify-center gap-9 bg-paper">
+<span class="block h-2 w-30 bg-accent" data-wipe></span>
+<h2 class="m-0 max-w-[87rem] headline text-h1 text-brand [--i:1]" data-rise>Una herramienta digital profesional para posicionar a Astorga Building Company</h2>
+<p class="m-0 max-w-[69rem] text-lead text-pretty text-mute [--i:2]" data-rise>Siguientes pasos: elegir el concepto de Hero, confirmar el alcance y agendar el inicio del desarrollo.</p>
+<div class="mt-5 flex items-center gap-14 border-t border-line pt-8 font-display text-h3 font-semibold tracking-widest uppercase [--i:3]" data-rise>
+<span class="text-brand">Gracias</span>
+<span class="text-accent" translate="no">Astorga Building Company · 2026</span>
+</div>
+</section>
+
+</x-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;mockupInteraction&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;hover&quot;,&quot;click&quot;],&quot;default&quot;:&quot;hover&quot;,&quot;tsType&quot;:&quot;'hover'|'click'&quot;,&quot;section&quot;:&quot;Mockup interactivo&quot;},&quot;showSectionNumbers&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Mockup interactivo&quot;}}">
+// Wireframe helpers. `b` = un bloque suelto, `g` = un grupo que contiene
+// bloques. Dos niveles bastan para dibujar el esqueleto de cualquiera de las
+// secciones (título + fila de tarjetas, imagen + texto, formulario, etc.).
+const b = (cls) => ({ cls, bars: [] });
+const g = (cls, bars) => ({ cls, bars });
+
+class Component extends DCLogic {
+  state = { active: 0 };
+  sections = [
+    {
+      section: "Hero", title: "Presentación principal",
+      description: "Primera impresión de la empresa, enfocada en comunicar la identidad de Astorga Building Company y generar impacto desde el primer momento.",
+      h: "h-90",
+      wrap: "flex min-w-0 flex-1 flex-col justify-center gap-5",
+      cols: [
+        b("h-8 w-[62%] bg-current opacity-50"),
+        b("h-4 w-[42%] bg-current opacity-25"),
+        b("mt-3 h-12 w-44 bg-current opacity-40")
+      ]
+    },
+    {
+      section: "Sobre la empresa", title: "Conoce Astorga Building Company",
+      description: "Presenta la historia, experiencia, valores y filosofía de trabajo de la empresa, generando confianza en los visitantes.",
+      h: "h-64",
+      wrap: "flex min-w-0 flex-1 items-stretch gap-7",
+      cols: [
+        b("w-[38%] bg-current opacity-15"),
+        g("flex min-w-0 flex-1 flex-col justify-center gap-4", [
+          b("h-6 w-[50%] bg-current opacity-45"),
+          b("h-3 w-full bg-current opacity-20"),
+          b("h-3 w-[86%] bg-current opacity-20"),
+          b("h-3 w-[62%] bg-current opacity-20")
+        ])
+      ]
+    },
+    {
+      section: "Servicios", title: "Soluciones y capacidades",
+      description: "Presenta las áreas de trabajo de la empresa y las soluciones que ofrece dentro del sector de construcción, diseño e infraestructura.",
+      h: "h-68",
+      wrap: "flex min-w-0 flex-1 flex-col gap-5",
+      cols: [
+        b("h-6 w-[26%] bg-current opacity-45"),
+        g("flex min-h-0 flex-1 gap-5", [
+          b("flex-1 bg-current opacity-15"),
+          b("flex-1 bg-current opacity-15"),
+          b("flex-1 bg-current opacity-15")
+        ])
+      ]
+    },
+    {
+      section: "Proyectos realizados", title: "Portafolio de proyectos",
+      description: "Muestra trabajos realizados, proyectos destacados y experiencia adquirida, demostrando la capacidad profesional de la empresa.",
+      h: "h-74",
+      wrap: "flex min-w-0 flex-1 flex-col gap-5",
+      cols: [
+        b("h-6 w-[32%] bg-current opacity-45"),
+        g("flex min-h-0 flex-1 gap-4", [
+          b("flex-[1.6] bg-current opacity-15"),
+          b("flex-1 bg-current opacity-15"),
+          b("flex-1 bg-current opacity-15"),
+          b("flex-[1.3] bg-current opacity-15")
+        ])
+      ]
+    },
+    {
+      section: "Misión y visión", title: "Propósito y proyección de la empresa",
+      description: "Comunica el propósito que guía el trabajo de Astorga Building Company y hacia dónde se proyecta a futuro, reforzando su identidad y compromiso a largo plazo.",
+      h: "h-52",
+      wrap: "flex min-w-0 flex-1 items-center gap-10",
+      cols: [
+        g("flex min-w-0 flex-1 flex-col gap-3", [
+          b("h-8 w-[46%] bg-current opacity-45"),
+          b("h-3 w-full bg-current opacity-20"),
+          b("h-3 w-[82%] bg-current opacity-20"),
+          b("h-3 w-[60%] bg-current opacity-20")
+        ]),
+        g("flex min-w-0 flex-1 flex-col gap-3", [
+          b("h-8 w-[46%] bg-current opacity-45"),
+          b("h-3 w-full bg-current opacity-20"),
+          b("h-3 w-[82%] bg-current opacity-20"),
+          b("h-3 w-[60%] bg-current opacity-20")
+        ])
+      ]
+    },
+    {
+      section: "Diferenciales", title: "¿Por qué elegir Astorga?",
+      description: "Comunica los aspectos que diferencian a la empresa: su propuesta de valor, metodología de trabajo y compromiso con sus clientes.",
+      h: "h-62",
+      wrap: "flex min-w-0 flex-1 items-stretch gap-7",
+      cols: [
+        g("flex w-[30%] flex-col justify-center gap-4", [
+          b("h-6 w-[78%] bg-current opacity-45"),
+          b("h-3 w-full bg-current opacity-20"),
+          b("h-3 w-[64%] bg-current opacity-20")
+        ]),
+        g("grid min-h-0 flex-1 grid-cols-2 gap-4", [
+          b("bg-current opacity-15"),
+          b("bg-current opacity-15"),
+          b("bg-current opacity-15"),
+          b("bg-current opacity-15")
+        ])
+      ]
+    },
+    {
+      section: "Testimonios", title: "Experiencias de clientes",
+      description: "Muestra opiniones y experiencias de clientes anteriores, reforzando la confianza y credibilidad de la empresa.",
+      h: "h-58",
+      wrap: "flex min-w-0 flex-1 items-stretch gap-6",
+      cols: [
+        g("flex min-w-0 flex-1 flex-col justify-center gap-4 border border-current/25 px-6", [
+          b("h-3 w-full bg-current opacity-20"),
+          b("h-3 w-[72%] bg-current opacity-20"),
+          b("mt-1 h-5 w-24 bg-current opacity-45")
+        ]),
+        g("flex min-w-0 flex-1 flex-col justify-center gap-4 border border-current/25 px-6", [
+          b("h-3 w-full bg-current opacity-20"),
+          b("h-3 w-[72%] bg-current opacity-20"),
+          b("mt-1 h-5 w-24 bg-current opacity-45")
+        ])
+      ]
+    },
+    {
+      section: "Certificaciones y aliados", title: "Respaldo profesional",
+      description: "Presenta certificaciones, asociaciones y aliados estratégicos que respaldan la experiencia y profesionalismo de la empresa.",
+      h: "h-38",
+      wrap: "flex min-w-0 flex-1 items-stretch gap-6 py-3",
+      cols: [
+        b("flex-1 bg-current opacity-15"),
+        b("flex-1 bg-current opacity-15"),
+        b("flex-1 bg-current opacity-15"),
+        b("flex-1 bg-current opacity-15"),
+        b("flex-1 bg-current opacity-15")
+      ]
+    },
+    {
+      section: "Ubicación", title: "Dónde encontrarnos",
+      description: "Información sobre la ubicación física, zonas de operación y canales de contacto para facilitar la comunicación.",
+      h: "h-66",
+      wrap: "flex min-w-0 flex-1 items-stretch gap-7",
+      cols: [
+        b("flex-[1.7] bg-current opacity-15"),
+        g("flex w-[34%] flex-col justify-center gap-4", [
+          b("h-6 w-[62%] bg-current opacity-45"),
+          b("h-3 w-full bg-current opacity-20"),
+          b("h-3 w-[74%] bg-current opacity-20"),
+          b("h-3 w-[52%] bg-current opacity-20")
+        ])
+      ]
+    },
+    {
+      section: "Preguntas frecuentes", title: "Resuelve tus dudas",
+      description: "Responde preguntas comunes de los clientes y facilita la toma de decisión antes de solicitar información.",
+      h: "h-62",
+      wrap: "flex min-w-0 flex-1 flex-col justify-center gap-5",
+      cols: [
+        g("flex items-center justify-between border-b border-current/20 pb-4", [
+          b("h-3 w-[46%] bg-current opacity-25"),
+          b("h-3 w-3 bg-current opacity-45")
+        ]),
+        g("flex items-center justify-between border-b border-current/20 pb-4", [
+          b("h-3 w-[56%] bg-current opacity-25"),
+          b("h-3 w-3 bg-current opacity-45")
+        ]),
+        g("flex items-center justify-between border-b border-current/20 pb-4", [
+          b("h-3 w-[38%] bg-current opacity-25"),
+          b("h-3 w-3 bg-current opacity-45")
+        ]),
+        g("flex items-center justify-between border-b border-current/20 pb-4", [
+          b("h-3 w-[50%] bg-current opacity-25"),
+          b("h-3 w-3 bg-current opacity-45")
+        ])
+      ]
+    },
+    {
+      section: "Contacto", title: "Solicita información o cotiza tu proyecto",
+      description: "Sección final orientada a convertir visitantes en clientes mediante formularios de contacto y canales directos.",
+      h: "h-72",
+      wrap: "flex min-w-0 flex-1 items-stretch gap-8",
+      cols: [
+        g("flex min-w-0 flex-1 flex-col justify-center gap-4", [
+          b("h-10 w-full border border-current/30"),
+          b("h-10 w-full border border-current/30"),
+          b("h-20 w-full border border-current/30"),
+          b("mt-1 h-11 w-40 bg-current opacity-45")
+        ]),
+        g("flex w-[32%] flex-col justify-center gap-4", [
+          b("h-6 w-[70%] bg-current opacity-45"),
+          b("h-3 w-full bg-current opacity-20"),
+          b("h-3 w-[84%] bg-current opacity-20"),
+          b("h-3 w-[60%] bg-current opacity-20")
+        ])
+      ]
+    }
+  ];
+
+  // Shared row chrome. Written as one literal string per state (rather than
+  // assembled from fragments) so Tailwind's scanner sees every class it has
+  // to emit — a concatenated `base + variant` would hide them from the build.
+  // Sólo `border-b-…` / `border-l-…` (nunca `border-…` genérico) para que el
+  // color del filo activo no dependa del orden de emisión de Tailwind.
+  static ROW_ON = "flex shrink-0 gap-6 overflow-hidden border-b border-b-line border-l-6 border-l-signal bg-brand/5 px-7 py-7 text-left text-brand transition-colors duration-150 ease-out focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent";
+  static ROW_OFF = "flex shrink-0 gap-6 overflow-hidden border-b border-b-line border-l-6 border-l-transparent bg-paper px-7 py-7 text-left text-mute transition-colors duration-150 ease-out hover:bg-surface focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent";
+
+  renderVals() {
+    const mode = this.props.mockupInteraction ?? "hover";
+    const showNums = this.props.showSectionNumbers ?? true;
+    const items = this.sections.map((s, i) => {
+      const on = i === this.state.active;
+      return {
+        section: s.section,
+        wrap: s.wrap,
+        cols: s.cols,
+        num: showNums ? String(i + 1).padStart(2, "0") : "",
+        // Alto real por sección: el mockup mide más que la ventana y se
+        // recorre con scroll, en vez de comprimir 11 secciones en un alto fijo.
+        cls: (on ? Component.ROW_ON : Component.ROW_OFF) + " " + s.h,
+        pressed: on ? "true" : "false",
+        onMouseEnter: mode === "hover" ? () => this.setState({ active: i }) : undefined,
+        onClick: () => this.setState({ active: i })
+      };
+    });
+    const a = this.sections[this.state.active];
+    return {
+      items,
+      activeSection: a.section,
+      activeTitle: a.title,
+      activeDesc: a.description,
+      activeNum: String(this.state.active + 1).padStart(2, "0")
+    };
+  }
+}
+</script>
+</body>
+</html>
